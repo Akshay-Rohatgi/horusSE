@@ -93,3 +93,14 @@ def User_Not_In_A_Group(username, group):
         return False
     return True
 
+def Service_Is_Up(service):
+    handle = subprocess.getoutput("systemctl is-active '" + service + "'")
+    if handle == 'active':
+        return True
+    return False
+
+def Service_Is_Not_Up(service):
+    handle = subprocess.getoutput("systemctl is-active '" + service + "'")
+    if handle == 'inactive':
+        return True
+    return False
