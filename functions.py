@@ -2,6 +2,7 @@ import os
 import subprocess
 import os.path
 from os import path
+import re
 
 def String_In_File(path, string):
     with open(path, 'r') as handle:
@@ -46,6 +47,16 @@ def File_Not_Exists(path):
         return False
     return True
 
+def Directory_Exists(path):
+    if os.path.exists(path):
+        return True
+    return False
+
+def Directory_Not_Exists(path):
+    if os.path.exists(path):
+        return False
+    return True
+
 def User_Exists(username):
     handle = subprocess.getoutput("cut -d: -f1 /etc/passwd")
     if username in handle:
@@ -58,4 +69,27 @@ def User_Not_Exists(username):
         return False
     return True
 
+def Group_Exists(group):
+    handle = subprocess.getoutput("cut -d: -f1 /etc/group")
+    if group in handle:
+        return True
+    return False
+
+def Group_Not_Exists(group):
+    handle = subprocess.getoutput("cut -d: -f1 /etc/group")
+    if group in handle:
+        return False
+    return True
+
+def User_In_A_Group(username, group):
+    handle = subprocess.getoutput("groups '" + username + "' | grep '" + group + "'")
+    if username in handle:
+        return True
+    return False
+
+def User_Not_In_A_Group(username, group):
+    handle = subprocess.getoutput("groups '" + username + "' | grep '" + group + "'")
+    if username in handle:
+        return False
+    return True
 
