@@ -46,7 +46,16 @@ def File_Not_Exists(path):
         return False
     return True
 
-def User_Exists(username)
-    handle = subprocess.getoutput("")
+def User_Exists(username):
+    handle = subprocess.getoutput("cut -d: -f1 /etc/passwd")
+    if username in handle:
+        return True
+    return False
 
-print(File_Not_Exists('/etc/login.defs'))
+def User_Not_Exists(username):
+    handle = subprocess.getoutput("cut -d: -f1 /etc/passwd")
+    if username in handle:
+        return False
+    return True
+
+
