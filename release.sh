@@ -38,3 +38,5 @@ find /etc -exec  touch --date='2012-12-12 12:12' {} \\; 2>/dev/null
 find /home -exec  touch --date='2012-12-12 12:12' {} \\; 2>/dev/null
 find /var -exec  touch --date='2012-12-12 12:12' {} \\; 2>/dev/null
 find /opt -exec  touch --date='2012-12-12 12:12' {} \\; 2>/dev/null
+
+echo "done"
