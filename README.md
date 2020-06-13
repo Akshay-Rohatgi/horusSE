@@ -170,7 +170,7 @@ def scoring():
     check('User_Exists', 'User added', 3, 'user2', None, None)
 ```
 - score report:
-[score report](static/score_report_example.png)
+![score report](static/score_report_example.png)
 
 # TODO:
 - maybe a way to compile so cheating couldnt exist? pyc?
