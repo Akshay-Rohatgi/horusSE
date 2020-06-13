@@ -175,3 +175,4 @@ def report_write():
     return True
 
 report_write()
+os.system('cat web/logo.txt')
