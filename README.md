@@ -18,6 +18,19 @@ Created to advance my own python skills and learn how to use python with linux. 
 
 # Documentation
 
+## setup
+- For setup just clone the repo with
+```bash
+$ cd /opt/
+$ git clone https://github.com/Akshay-Rohatgi/horusSE
+
+$ sudo bash install.sh
+```
+- configure your vulns and then run the release script 
+```bash
+$ sudo bash release.sh
+```
+
 ## __Scoring__
 - everything will be entered into the scoring function in scoring.py
 ```python
@@ -77,18 +90,6 @@ penalty('Service_Is_Not_Up', 'Cron service has been stopped', -2, 'cron', None, 
 
 penalty('File_Not_Exists', 'Important File Removed', -2, '/etc/hello.txt', None, None)
 
-```
-
-- For setup just clone the repo with
-```bash
-$ cd /opt/
-$ git clone https://github.com/Akshay-Rohatgi/horusSE
-
-$ sudo bash install.sh
-```
-- configure your vulns and then run the release script 
-```bash
-$ sudo bash release.sh
 ```
 
 # Checks:
