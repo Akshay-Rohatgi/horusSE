@@ -152,3 +152,8 @@ check('File_Permissions_Is', '/etc/passwd has secure permissions', 5, '/etc/pass
 
 check('File_Permissions_Is_Not', '/etc/group is not world writable', 5, '/etc/group', 777, None)
 ```
+
+
+# TODO:
+- maybe a way to compile so cheating couldnt exist? pyc?
+- regex checks
