@@ -6,8 +6,10 @@ read username
 echo "setting up image with username $username"
 
 chmod +x desktop/*
+gio set desktop/score_report.desktop "metadata::trusted" yes
 mv desktop/* /home/$username/Desktop/
-
+chmod 777 /home/$username/Desktop/*
+chown $username:$username /home/$username/Desktop/*
 
 echo "creating horus_score command..."
 touch /usr/local/bin/horus_score
@@ -18,7 +20,7 @@ if [[ $USER != "root" ]]; then
    exit 1
 fi
 
-python3 /opt/horusSE/scoring.py"""
+python3 /opt/horusSE/scoring.py""" > /usr/local/bin/horus_score
 
 sudo chmod +x /usr/local/bin/horus_score
 

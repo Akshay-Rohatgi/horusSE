@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=score report
+Type=Application
+Exec=x-www-browser "file:///opt/horusSE/web/score_report.html"
+Icon=/opt/horusSE/web/best.png
