@@ -5,7 +5,8 @@ penalty_messages = []
 report_messages = []
 check_scores = []
 penalty_scores = []
-
+possible_scores = []
+vulncount = []
 
 def check(type, message, points, check1, check2, check3):
     if type == 'String_In_File':
@@ -100,6 +101,9 @@ def check(type, message, points, check1, check2, check3):
             message = message + " - " + str(points) + " points."
             report_messages.append(message)
             check_scores.append(points)
+    quikfix = 1
+    vulncount.append(quikfix)
+    possible_scores.append(points)
     return True
 
 def penalty(type, message, points, check1, check2, check3):
