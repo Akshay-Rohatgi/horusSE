@@ -1,13 +1,14 @@
 from vuln_load import check, report_messages, penalty_messages, check_scores, penalty_scores, penalty, possible_scores, vulncount, penaltycount, possible_penalties
 from datetime import datetime
 import os
+import subprocess
 
 # ADD YOUR VULNS HERE
 def scoring():
     penalty('Service_Is_Not_Up', 'Cron service has been stopped', -2, 'cron', None, None)
     penalty('File_Not_Exists', 'Important File Removed', -2, '/home/akshay/Desktop/check.txt', None, None)
 
-    check('String_In_File', 'Line in file found', 2, '/home/akshay/Desktop/check.txt', 'hello', None)
+    check('String_In_File', 'Line in file found', 3, '/home/akshay/Desktop/check.txt', 'hello', None)
     check('File_Permissions_Is', '/etc/passwd has secure permissions', 5, '/etc/passwd', 644, None)
     check('Package_Installed', 'Required Package installed', 2, 'yelp', 'None', None)
     check('User_Not_Exists', 'Unauthorized user removed', 1, 'checkuser', None, None)
@@ -17,10 +18,12 @@ scoring()
 
 def gain():
   os.system("notify-send 'You gained points!'")
+  os.system("aplay web/gain.wav > /dev/null 2>&1")
   print('You gained points!')
 
 def lose():
   os.system("notify-send 'You lost points!'")
+  os.system("aplay web/alarm.wav > /dev/null 2>&1")
   print('You lost points!')
 
 # Important variables
