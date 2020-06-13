@@ -85,6 +85,7 @@ penalty('File_Not_Exists', 'Important File Removed', -2, '/etc/hello.txt', None,
 
 # Checks:
 - all of these checks can be used as penalties as well by just using the penalty() function
+
 __String_In_File__/__String_Not_In_File__ - checks to see if a string exists or does not exist in a file
 ```
 check('String_In_File', 'Line in file found', 3, '/home/akshay/Desktop/check.txt', 'hello', None)
