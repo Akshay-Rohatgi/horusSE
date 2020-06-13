@@ -104,3 +104,15 @@ def Service_Is_Not_Up(service):
     if handle == 'inactive':
         return True
     return False
+
+def File_Permissions_Is(path, value):
+    handle = subprocess.getoutput("stat -c '%a' " + path)
+    if int(value) == int(handle):
+        return True
+    return False
+
+def File_Permissions_Is_Not(path, value):
+    handle = subprocess.getoutput("stat -c '%a' " + path)
+    if int(value) == int(handle):
+        return False
+    return True

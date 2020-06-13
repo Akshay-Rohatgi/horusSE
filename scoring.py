@@ -4,14 +4,14 @@ from datetime import datetime
 
 # ADD YOUR VULNS HERE
 def scoring():
-    penalty('String_Not_In_File', 'check 2 passed', -3, '/home/akshay/Desktop/check.txt', 'green', None)
-    penalty('String_Not_In_File', 'check 2 passed', -3, '/home/akshay/Desktop/check.txt', 'green', None)
+    penalty('Service_Is_Not_Up', 'Cron service has been stopped', -2, 'cron', None, None)
+    penalty('File_Not_Exists', 'Important File Removed', -2, '/home/akshay/Desktop/check.txt', None, None)
 
-    check('String_In_File', 'check 1 passed', 8, '/home/akshay/Desktop/check.txt', 'hello', None)
-    check('String_In_File', 'check 1 passed', 8, '/home/akshay/Desktop/check.txt', 'hello', None)
-    check('String_In_File', 'check 1 passed', 8, '/home/akshay/Desktop/check.txt', 'green', None)
-    check('String_In_File', 'check 1 passed', 2, '/home/akshay/Desktop/check.txt', 'green', None)
-
+    check('String_In_File', 'Line in file found', 3, '/home/akshay/Desktop/check.txt', 'hello', None)
+    check('File_Permissions_Is', '/etc/passwd has secure permissions', 5, '/etc/passwd', 644, None)
+    check('Package_Installed', 'Required Package installed', 2, 'yelp', 'None', None)
+    check('User_Not_Exists', 'Unauthorized user removed', 1, 'checkuser', None, None)
+    check('User_Exists', 'User added', 3, 'user2', None, None)
 
 scoring()
 
@@ -30,7 +30,7 @@ message_One = str(current_vulncount) + " out of " + str(possible_vulncount) + " 
 message_Two = str(finalscore) + " points out of " + str(possible_sum) + " points recieved"
 
 def report_write():
-    f = open('web/test.html', 'w')
+    f = open('web/score_report.html', 'w')
     base = """<!DOCTYPE HTML>
 <html>
 
@@ -78,7 +78,7 @@ def report_write():
       width: 900px;
       max-width: 100%;
       min-width: 600px;
-      box-shadow: 0px 0px 12px grey;
+      box-shadow: 0px 0px 12px red;
     }
 
     .text {
@@ -136,6 +136,9 @@ def report_write():
 """
     f.write(base)
     f.write(time)
+    for penalty in penalty_messages:
+      add = """<h2><span style="color:red; font-size: large; font-weight: 1000; text-align: center;">Penalty: """ + penalty + """</span></h2>"""
+      f.write(add)
     f.write(other)
     f.write(count)
     f.write(possible)
