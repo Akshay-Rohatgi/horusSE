@@ -1,8 +1,8 @@
 # horusSE
 
-A lightweight vulnerability remedition engine.
+A lightweight vulnerability remedition engine developed by Akshay Rohatgi.
 
-Created to advance my own python skills and learn how to use python with linux
+Created to advance my own python skills and learn how to use python with linux. I am very interested in cybersecurity both offensive and defensive and this is where the idea for this project came from.
 
 # Supported Functions
 - String in file or string not in file
