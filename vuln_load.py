@@ -5,7 +5,10 @@ penalty_messages = []
 report_messages = []
 check_scores = []
 penalty_scores = []
-
+possible_scores = []
+vulncount = []
+possible_penalties = []
+penaltycount = []
 
 def check(type, message, points, check1, check2, check3):
     if type == 'String_In_File':
@@ -65,7 +68,6 @@ def check(type, message, points, check1, check2, check3):
             check_scores.append(points)
     if type == 'User_Not_Exists':
         if User_Not_Exists(check1) == True:
-            check_score = check_score + int(points)
             message = message + " - " + str(points) + " points."
             report_messages.append(message)
             check_scores.append(points)
@@ -76,7 +78,6 @@ def check(type, message, points, check1, check2, check3):
             check_scores.append(points)
     if type == 'Group_Not_Exists':
         if Group_Not_Exists(check1) == True:
-            check_score = check_score + int(points)
             message = message + " - " + str(points) + " points."
             report_messages.append(message)
             check_scores.append(points)
@@ -100,10 +101,12 @@ def check(type, message, points, check1, check2, check3):
             message = message + " - " + str(points) + " points."
             report_messages.append(message)
             check_scores.append(points)
+    quikfix = 1
+    vulncount.append(quikfix)
+    possible_scores.append(points)
     return True
 
 def penalty(type, message, points, check1, check2, check3):
-    global penalty_score
     if type == 'String_In_File':
         if String_In_File(check1, check2) == True:
             message = message + " - " + str(points) + " points."
@@ -116,7 +119,6 @@ def penalty(type, message, points, check1, check2, check3):
             penalty_scores.append(points)
     if type == 'Package_Installed':
         if Package_Installed(check1) == True:
-            penalty_score = penalty_score + int(points)
             message = message + " - " + str(points) + " points."
             penalty_messages.append(message)
             penalty_scores.append(points)
@@ -169,6 +171,7 @@ def penalty(type, message, points, check1, check2, check3):
         if Group_Exists(check1) == True:
             message = message + " - " + str(points) + " points."
             penalty_messages.append(message)
+            penalty_scores.append(points)
     if type == 'Group_Not_Exists':
         if Group_Not_Exists(check1) == True:
             message = message + " - " + str(points) + " points."
@@ -194,5 +197,8 @@ def penalty(type, message, points, check1, check2, check3):
             message = message + " - " + str(points) + " points."
             penalty_messages.append(message)
             penalty_scores.append(points)
+    otherquikfix = 1
+    penaltycount.append(otherquikfix)
+    possible_penalties.append(points)
     return True
 
