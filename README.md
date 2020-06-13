@@ -20,7 +20,7 @@ Created to advance my own python skills and learn how to use python with linux. 
 
 ## __Scoring__
 - everything will be entered into the scoring function in scoring.py
-```
+```python
 def scoring():
     penalty('Service_Is_Not_Up', 'Cron service has been stopped', -2, 'cron', None, None)
     penalty('File_Not_Exists', 'Important File Removed', -2, '/home/akshay/Desktop/check.txt', None, None)
