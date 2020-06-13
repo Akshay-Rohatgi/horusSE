@@ -81,7 +81,13 @@ penalty('File_Not_Exists', 'Important File Removed', -2, '/etc/hello.txt', None,
 
 - For setup just clone the repo with
 ```
+$ cd /opt/
+$ git clone https://github.com/Akshay-Rohatgi/horusSE
+
+$ sudo bash install.sh
 ```
+- configure your vulns and then run the release script 
+```$ sudo bash release.sh```
 
 # Checks:
 - all of these checks can be used as penalties as well by just using the penalty() function
