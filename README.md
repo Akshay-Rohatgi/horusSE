@@ -156,6 +156,21 @@ check('File_Permissions_Is', '/etc/passwd has secure permissions', 5, '/etc/pass
 check('File_Permissions_Is_Not', '/etc/group is not world writable', 5, '/etc/group', 777, None)
 ```
 
+#__Example__
+- scoring config:
+```python 
+def scoring():
+    penalty('Service_Is_Not_Up', 'Cron service has been stopped', -2, 'cron', None, None)
+    penalty('File_Not_Exists', 'Important File Removed', -2, '/home/akshay/Desktop/check.txt', None, None)
+
+    check('String_In_File', 'Line in file found', 3, '/home/akshay/Desktop/check.txt', 'hello', None)
+    check('File_Permissions_Is', '/etc/passwd has secure permissions', 5, '/etc/passwd', 644, None)
+    check('Package_Installed', 'Required Package installed', 2, 'yelp', 'None', None)
+    check('User_Not_Exists', 'Unauthorized user removed', 1, 'checkuser', None, None)
+    check('User_Exists', 'User added', 3, 'user2', None, None)
+```
+- score report:
+[score report](static/score_report_example)
 
 # TODO:
 - maybe a way to compile so cheating couldnt exist? pyc?
