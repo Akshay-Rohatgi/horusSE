@@ -88,7 +88,8 @@ $ sudo bash install.sh
 ```
 - configure your vulns and then run the release script 
 ```bash
-$ sudo bash release.sh```
+$ sudo bash release.sh
+```
 
 # Checks:
 - all of these checks can be used as penalties as well by just using the penalty() function
