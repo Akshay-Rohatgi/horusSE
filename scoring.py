@@ -8,7 +8,7 @@ def scoring():
     penalty('Service_Is_Not_Up', 'Cron service has been stopped', -2, 'cron', None, None)
     penalty('File_Not_Exists', 'Important File Removed', -2, '/home/akshay/Desktop/check.txt', None, None)
 
-    check('String_In_File', 'Line in file found', 3, '/home/akshay/Desdktop/check.txt', 'hello', None)
+    check('String_In_File', 'Line in file found', 3, '/home/akshay/Desktop/check.txt', 'hello', None)
     check('File_Permissions_Is', '/etc/passwd has secure permissions', 5, '/etc/passwd', 644, None)
     check('Package_Installed', 'Required Package installed', 2, 'yelp', 'None', None)
     check('User_Not_Exists', 'Unauthorized user removed', 1, 'checkuser', None, None)
