@@ -135,21 +135,21 @@ check('User_Exists', 'User root exists', 2, 'root', None, None)
 check('User_Not_Exists', 'Prohibited user account removed', 2, 'hackerman', None, None)
 ```
 
-__Group_Exists__/__Group_Not_Exists__ - checks to see if the user exists or not
+__Group_Exists__/__Group_Not_Exists__ - checks to see if the group exists or not
 ```python
 check('Group_Exists', 'admins group exists', 2, 'adm', None, None)
 
 check('Group_Not_Exists', 'Prohibited group removed', 2, 'hackers', None, None)
 ```
 
-__Service_Is_Up__/__Service_Is_Not_Up__ - checks to see if the user exists or not
+__Service_Is_Up__/__Service_Is_Not_Up__ - checks to see if the service is running or not
 ```python
 check('Service_Is_Up', 'cron service is up', 2, 'cron', None, None)
 
 check('Service_Is_Not_Up', 'Prohibited service is removed or stopped', 2, 'nfs', None, None)
 ```
 
-__File_Permissions_Is__/__File_Permissions_Is_Not__ - checks to see if the user exists or not
+__File_Permissions_Is__/__File_Permissions_Is_Not__ - checks to see if a file has specific permissions or not
 ```python
 check('File_Permissions_Is', '/etc/passwd has secure permissions', 5, '/etc/passwd', 644, None)
 
