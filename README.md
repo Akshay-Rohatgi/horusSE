@@ -175,3 +175,4 @@ def scoring():
 # TODO:
 - maybe a way to compile so cheating couldnt exist? pyc?
 - regex checks
+- setup a server of sorts?
