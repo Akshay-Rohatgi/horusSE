@@ -44,7 +44,7 @@ def scoring():
     check('User_Not_Exists', 'Unauthorized user removed', 1, 'checkuser', None, None)
     check('User_Exists', 'User added', 3, 'user2', None, None)
 ```
-- Checks have a maximum of 3 arguments, some checks have less than 3 so the checks with less than 3 will have None in the check place.
+- Checks have a maximum of 3 arguments, some checks have less than 3 so the checks with less than 3 will have `None` in the check place.
 
 - Checks structure works like this:
 ```python
