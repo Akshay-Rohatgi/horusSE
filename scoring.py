@@ -2,9 +2,11 @@ from vuln_load import check, report_messages, penalty_messages, check_scores, pe
 from datetime import datetime
 import os
 import subprocess
+from remote import rem
 
 # ADD YOUR VULNS HERE
 def scoring():
+    #rem('yes')
     penalty('Service_Is_Not_Up', 'Cron service has been stopped', -2, 'cron', None, None)
     penalty('File_Not_Exists', 'Important File Removed', -2, '/home/akshay/Desktop/check.txt', None, None)
 
