@@ -4,3 +4,4 @@ import requests
 remote = None
 
 def rem(check):
+    return True:
