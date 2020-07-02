@@ -40,7 +40,7 @@ def scoring():
 
     check('String_In_File', 'Line in file found', 3, '/home/akshay/Desktop/check.txt', 'hello', None)
     check('File_Permissions_Is', '/etc/passwd has secure permissions', 5, '/etc/passwd', 644, None)
-    check('Package_Installed', 'Required Package installed', 2, 'yelp', 'None', None)
+    check('Package_Installed', 'Required Package installed', 2, 'yelp', None, None)
     check('User_Not_Exists', 'Unauthorized user removed', 1, 'checkuser', None, None)
     check('User_Exists', 'User added', 3, 'user2', None, None)
 ```
